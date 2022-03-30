@@ -1,8 +1,26 @@
 # git
-清除本地git缓存 不影响已提交 待提交
+
+清除本地 git 缓存 不影响已提交 待提交
 git rm -r --cached .
 
-不要误解了.gitignore的用途，该文件只能作用于未被追踪的文件，也就是那些从未被git记录过的文件（自添加后，从未add及commit过的文件）。如果文件曾被git记录过，则.gitignore对他们完全无效。
+```sh
+# 如果是对所有文件都取消跟踪的话，就是
+# //不删除本地文件
+git rm -r --cached . 　　
+
+# //删除本地文件
+git rm -r --f . 　　
+
+
+# 对某个文件取消跟踪
+# 删除readme1.txt的跟踪，并保留在本地。
+git rm --cached readme1.txt
+
+# 删除readme1.txt的跟踪，并且删除本地文件。
+git rm --f readme1.txt
+```
+
+不要误解了.gitignore 的用途，该文件只能作用于未被追踪的文件，也就是那些从未被 git 记录过的文件（自添加后，从未 add 及 commit 过的文件）。如果文件曾被 git 记录过，则.gitignore 对他们完全无效。
 
 作者：被卷成一团的江江
 链接：https://www.jianshu.com/p/e4b3e98f0094
@@ -12,6 +30,7 @@ git rm -r --cached .
 # cordova-inner-vue
 
 ### Customize configuration
+
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 配置文件
@@ -35,6 +54,7 @@ Creating Cordova project for the Android platform:
 
 gradle --warning-mode all
 ```
+
 正常配置外 常见问题 多数是因为 AndroidManifest 的配置问题
 
 ```xml
@@ -62,6 +82,7 @@ gradle --warning-mode all
 <uses-feature android:name="android.support.multidex.MultiDexApplication" android:required="false" />
 <uses-feature android:name="android.hardware.camera" />
 ```
+
 ```xml
 <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/uses-permission" xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -69,8 +90,6 @@ gradle --warning-mode all
 ```
 
 <widget id="com.gzdd.ioloii.dev" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
-
-
 
 ```sh
 允许意图
@@ -83,11 +102,10 @@ gradle --warning-mode all
 ```
 
 > Q:
-Issue with Whitelist class
-cordova-plugin-file-transfer for Cordova Android 10
-https://github.com/apache/cordova-plugin-file-transfer/issues/316
+> Issue with Whitelist class
+> cordova-plugin-file-transfer for Cordova Android 10
+> https://github.com/apache/cordova-plugin-file-transfer/issues/316
 
-
-文件下载后无法正常打开预览  大小异常
+文件下载后无法正常打开预览 大小异常
 https://www.npmjs.com/package/cordova-plugin-android-permissions
 cordova plugin add cordova-plugin-android-permissions

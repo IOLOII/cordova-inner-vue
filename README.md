@@ -1,3 +1,14 @@
+# git
+清除本地git缓存 不影响已提交 待提交
+git rm -r --cached .
+
+不要误解了.gitignore的用途，该文件只能作用于未被追踪的文件，也就是那些从未被git记录过的文件（自添加后，从未add及commit过的文件）。如果文件曾被git记录过，则.gitignore对他们完全无效。
+
+作者：被卷成一团的江江
+链接：https://www.jianshu.com/p/e4b3e98f0094
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
 # cordova-inner-vue
 
 ### Customize configuration

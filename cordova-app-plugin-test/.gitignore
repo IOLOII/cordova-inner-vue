@@ -25,6 +25,5 @@ node_modules/
 /plugins/
 /platforms/
 /www/
+/www/index.html
 .gradle
-
-./www

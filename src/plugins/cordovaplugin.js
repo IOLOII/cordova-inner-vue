@@ -21,86 +21,86 @@ function cameraTakePicture() {
  * IOS:cdvfile://localhost/persistent/xbrother/assets目录
  * 文件目录存在则打开,不存在则创建
  * */
-function createAndWriteFile(t) {
+function createAndWriteFile(
+  url = "http://cordova.apache.org/static/img/cordova_bot.png"
+) {
   window.requestFileSystem(
-    LocalFileSystem.PERSISTENT,
-    5 * 1024 * 1024,
+    window.TEMPORARY,
+    50 * 1024 * 1024,
     function (fs) {
-      console.log("打开的文件系统: " + fs.name);
-      fs.root.getDirectory(
-        "xbrother",
-        { create: true },
-        function (dirEntry) {
-          dirEntry.getDirectory(
-            "assets",
-            { create: true },
-            function (subDirEntry) {
-              console.log("创建目录 sdcard/xbrother/assets 成功||目录已存在");
-              console.log("subDirEntry success");
-              console.log(t);
-              if (t) {
-                var fileTransfer = new FileTransfer();
-                var uri = encodeURI(
-                  "http://cordova.apache.org/static/img/cordova_bot.png"
-                );
-                var fileURL = "///storage/emulated/0/xbrother/assets";
+      console.log("file system open: " + fs.name);
 
-                // var path = cordova.file.dataDirectory; 返回当前项目的文件夹
-                // "file:///data/user/0/com.gzdd.ioloii.dev/files/";
-
-                fileTransfer.download(
-                  uri,
-                  fileURL + "/" + "logo.png",
-                  function (entry) {
-                    console.log("download complete: " + entry.toURL());
-                  },
-
-                  function (error) {
-                    console.log("download error source " + error.source);
-                    console.log("download error target " + error.target);
-                    console.log("download error code" + error.code);
-
-                    // error.code 枚举
-                    // 1 =FileTransferError.FILE_NOT_FOUND_ERR
-                    // 2 =FileTransferError.INVALID_URL_ERR
-                    // 3 =FileTransferError.CONNECTION_ERR
-                    // 4 =FileTransferError.ABORT_ERR
-                    // 5 =FileTransferError.NOT_MODIFIED_ERR
-                  },
-
-                  false,
-                  {
-                    headers: {
-                      // "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
-                    },
-                  }
-                );
-              }
-
-              return;
-
-              subDirEntry.getFile(
-                "task.json",
-                { create: true, exclusive: false },
-                function (fileEntry) {
-                  fileEntry.name == "task.json";
-                  fileEntry.fullPath == "xbrother/assets/task.json";
-                  //文件内容
-                  var dataObj = new Blob([tasksStr], { type: "text/plain" });
-                  //写入文件
-                  writeFile(fileEntry, dataObj);
-                },
-                onErrorCreateFile
-              );
-            },
-            onErrorGetDir
-          );
+      // Make sure you add the domain name to the Content-Security-Policy <meta> element.
+      var url = url;
+      // Parameters passed to getFile create a new file or return the file if it already exists.
+      download(fs.root, url, true);
+      return;
+      fs.root.getFile(
+        "app-debug.apk",
+        { create: true, exclusive: false },
+        function (fileEntry) {
+          download(fileEntry, url, true);
         },
-        onErrorGetDir
+        onErrorCreateFile
       );
     },
     onErrorLoadFs
   );
+}
+
+function download(fileEntry, uri, readBinaryData) {
+  var fileTransfer = new FileTransfer();
+  var fileURL = fileEntry.toURL();
+  console.log(fileURL);
+  fileTransfer.download(
+    encodeURI(uri),
+    fileURL,
+    function (entry) {
+      console.log("Successful download...");
+      console.log("download complete: " + entry.toURL());
+      // if (readBinaryData) {
+      //   // Read the file...
+      //   readBinaryFile(entry);
+      // } else {
+      //   // Or just display it.
+      //   displayImageByFileURL(entry);
+      // }
+    },
+    function (error) {
+      console.log("download error source " + error.source);
+      console.log("download error target " + error.target);
+      console.log("upload error code" + error.code);
+    },
+    null, // or, pass false
+    {
+      //headers: {
+      //    "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+      //}
+    }
+  );
+}
+function readBinaryFile(fileEntry) {
+  fileEntry.file(function (file) {
+    var reader = new FileReader();
+
+    reader.onloadend = function () {
+      console.log("Successful file read: " + this.result);
+      // displayFileData(fileEntry.fullPath + ": " + this.result);
+
+      var blob = new Blob([new Uint8Array(this.result)], { type: "image/png" });
+      displayImage(blob);
+    };
+
+    reader.readAsArrayBuffer(file);
+  }, onErrorReadFile);
+}
+function displayImage(blob) {
+  // Note: Use window.URL.revokeObjectURL when finished with image.
+  var objURL = window.URL.createObjectURL(blob);
+
+  // Displays image if result is a valid DOM string for an image.
+  var elem = document.getElementById("imageElement");
+  elem.src = objURL;
 }
 
 //检查是否打开文件写入

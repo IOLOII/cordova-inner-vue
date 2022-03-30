@@ -1,6 +1,8 @@
 <template>
   <div class="home">
+    <img id="imageElement" src="#" alt="等待图片" srcset="">
     <input type="text" v-model="type" placeholder="请输入权限"/>
+    <input type="text" v-model="createAndWriteFileurl" placeholder="请输入下载地址"/>
     <button @click="takePhoto">点击拍照</button>
     <button @click="download(true)">点击下载网络资源到本地</button>
     <button @click="createFolder">创建文件夹</button>
@@ -21,7 +23,8 @@
     components: {},
     data() {
       return {
-        type: 'CAMERA'
+        type: 'CAMERA',
+        createAndWriteFileurl: '',
       }
     },
     methods: {
@@ -30,7 +33,7 @@
         cameraTakePicture()
       },
       download() {
-        createAndWriteFile(true)
+        createAndWriteFile(this.createAndWriteFileurl)
       },
       createFolder() {
         createAndWriteFile(false)

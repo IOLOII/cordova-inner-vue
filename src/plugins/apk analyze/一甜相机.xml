@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="20840" android:versionName="2.8.4.20840" android:compileSdkVersion="30" android:compileSdkVersionCodename="11" package="com.kwai.m2u" platformBuildVersionCode="30" platformBuildVersionName="11">
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="29"/>
+    <supports-screens android:anyDensity="true" android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:resizeable="true"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RAISED_THREAD_PRIORITY"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.REORDER_TASKS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="com.android.permission.GET_INSTALLED_APPS"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-feature android:name="android.support.multidex.MultiDexApplication" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <queries>
+        <package android:name="com.smile.gifmaker"/>
+        <package android:name="com.kuaishou.nebula"/>
+        <package android:name="com.tencent.mm"/>
+        <package android:name="com.sina.weibo"/>
+        <package android:name="com.sina.weibotab"/>
+        <package android:name="com.sina.weibog3"/>
+        <package android:name="com.eico.weico"/>
+        <package android:name="me.imid.fuubo"/>
+        <package android:name="org.qii.weiciyuan"/>
+        <package android:name="com.tencent.mobileqq"/>
+        <package android:name="com.eg.android.AlipayGphone"/>
+    </queries>
+    <permission android:name="com.kwai.m2u.permission.MIPUSH_RECEIVE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.kwai.m2u.permission.MIPUSH_RECEIVE"/>
+    <uses-permission android:name="com.coloros.mcs.permission.RECIEVE_MCS_MESSAGE"/>
+    <uses-permission android:name="com.heytap.mcs.permission.RECIEVE_MCS_MESSAGE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="com.kwai.m2u.PERMISSION_UPDATE_SDK_CONFIG"/>
+    <permission android:name="com.kwai.m2u.PERMISSION_UPDATE_SDK_CONFIG" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.asus.msa.SupplementaryDID.ACCESS"/>
+    <uses-permission android:name="freemme.permission.msa"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-feature android:glEsVersion="0x20000" android:required="true"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.RECORD_VIDEO"/>
+    <permission android:name="com.kwai.m2u.permission.PROCESS_PUSH_MSG" android:protectionLevel="signatureOrSystem"/>
+    <permission android:name="com.kwai.m2u.permission.PUSH_PROVIDER" android:protectionLevel="signatureOrSystem"/>
+    <permission android:name="com.kwai.m2u.permission.PUSH_WRITE_PROVIDER" android:protectionLevel="signatureOrSystem"/>
+    <uses-permission android:name="com.kwai.m2u.permission.PROCESS_PUSH_MSG"/>
+    <uses-permission android:name="com.kwai.m2u.permission.PUSH_PROVIDER"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="com.huawei.appmarket.service.commondata.permission.GET_COMMON_DATA"/>
+    <application android:theme="@style/arg_res_0x7f120010" android:label="@string/app_name" android:icon="@mipmap/ic_launcher" android:name="com.kwai.m2u.CameraApplication" android:allowBackup="false" android:largeHeap="true" android:supportsRtl="true" android:usesCleartextTraffic="true" android:networkSecurityConfig="@xml/arg_res_0x7f140002" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:requestLegacyExternalStorage="true">
+        <meta-data android:name="CHANNEL" android:value="test"/>
+        <meta-data android:name="android.max_aspect" android:value="2.4"/>
+        <meta-data android:name="maxAspectRatio" android:value="2.4"/>
+        <meta-data android:name="notch.config" android:value="portrait|landscape"/>
+        <meta-data android:name="WECHAT_APPKEY" android:value="wxcf4dd65eead7b410"/>
+        <meta-data android:name="WEIBO_APPKEY" android:value="wb3695060371"/>
+        <meta-data android:name="WEIBO_CHANNEL" android:value="weibo"/>
+        <meta-data android:name="QQ_APPKEY" android:value="1107590800"/>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="2147483647"/>
+        <activity android:theme="@style/StartingWindowTheme" android:name="com.kwai.m2u.launch.M2uRouterActivity" android:launchMode="singleTask">
+            <meta-data android:name="android.max_aspect" android:value="2.4"/>
+            <meta-data android:name="maxAspectRatio" android:value="2.4"/>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="m2u"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="m2u3"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/StartingWindowTheme" android:name="com.kwai.m2u.main.CameraActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden">
+            <meta-data android:name="android.max_aspect" android:value="2.4"/>
+            <meta-data android:name="maxAspectRatio" android:value="2.4"/>
+            <intent-filter>
+                <action android:name="android.media.action.STILL_IMAGE_CAMERA"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/StartingWindowTheme" android:name="com.kwai.m2u.ksad.SplashActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden">
+            <meta-data android:name="android.max_aspect" android:value="2.4"/>
+            <meta-data android:name="maxAspectRatio" android:value="2.4"/>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.kwai.m2u.capture.CaptureActivity" android:screenOrientation="portrait" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustPan|stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.media.action.IMAGE_CAPTURE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity-alias android:label="@string/app_name" android:name="com.kwai.m2u.VideoCamera" android:targetActivity="com.kwai.m2u.capture.CaptureActivity">
+            <intent-filter>
+                <action android:name="android.media.action.VIDEO_CAMERA"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.media.action.VIDEO_CAPTURE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity-alias>
+        <activity android:name="com.kwai.m2u.setting.SettingActivity" android:screenOrientation="portrait" android:configChanges="uiMode|orientation|keyboardHidden"/>
+        <activity android:name="com.kwai.m2u.video.VideoActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="screenSize|orientation|keyboardHidden|keyboard" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:name="com.kwai.m2u.setting.savePath.SavePathActivity" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:name="com.kwai.m2u.setting.aboutUs.AboutUsActivity" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:name="com.kwai.m2u.social.publish.TemplatePublishActivity" android:screenOrientation="portrait" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:name="com.kwai.m2u.social.publish.ReplacePictureActivity" android:screenOrientation="portrait" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:theme="@style/HomeTheme" android:name="com.kwai.m2u.social.profile.ProfileActivity" android:screenOrientation="portrait" android:configChanges="screenSize|orientation|keyboardHidden"/>
+        <activity android:name="com.kwai.m2u.social.followfans.FollowFansActivity" android:screenOrientation="portrait" android:configChanges="screenSize|orientation|keyboardHidden"/>
+        <activity android:name="com.kwai.m2u.social.msg.MsgActivity" android:screenOrientation="portrait" android:configChanges="screenSize|orientation|keyboardHidden"/>
+        <activity android:name="com.kwai.m2u.social.msg.MsgSettingActivity" android:screenOrientation="portrait" android:configChanges="screenSize|orientation|keyboardHidden"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.music.MusicActivity" android:configChanges="orientation|keyboardHidden"/>
+        <provider android:name="androidx.core.content.FileProvider" android:exported="false" android:authorities="com.kwai.m2u.fileprovider" android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths"/>
+        </provider>
+        <provider android:name="com.kwai.m2u.preference.KwaiPreferenceProvider" android:exported="false" android:authorities="KWAI_PROVIDER_AUTHORITY.com.kwai.m2u" android:grantUriPermissions="true"/>
+        <activity android:name="com.tencent.tauth.AuthActivity" android:launchMode="singleTask" android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="tencent1107126759"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="tencent1107590800"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.tencent.connect.common.AssistActivity" android:screenOrientation="behind" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:name="com.kwai.m2u.share.QQProxy" android:configChanges="orientation|keyboardHidden" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:name="com.kwai.m2u.share.WBProxy" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:name="com.kwai.m2u.share.KwaiProxy" android:launchMode="singleTask" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:name="com.kwai.m2u.share.InsProxy" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:name="com.kwai.m2u.wxapi.WXEntryActivity" android:exported="true" android:launchMode="singleTask"/>
+        <activity android:name="com.kwai.m2u.operations.CommonWebviewActivity" android:exported="false" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" android:windowSoftInputMode="adjustResize|stateAlwaysHidden"/>
+        <activity android:name="com.kwai.m2u.manager.safemode.FeedbackWebActivity" android:exported="false" android:process=":crash" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" android:windowSoftInputMode="adjustResize|stateAlwaysHidden"/>
+        <service android:name="com.kwai.m2u.component.CommonIntentService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="true"/>
+        <activity android:name="com.kwai.m2u.debug.DebugActivity" android:launchMode="singleTop"/>
+        <activity android:name="com.kwai.m2u.debug.DebugLogViewerActivity"/>
+        <activity android:name="com.kwai.m2u.video.clip.EditorCropActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"/>
+        <service android:name="com.kwai.chat.kwailink.service.KwaiLinkService" android:exported="false" android:process=":messagesdk">
+            <intent-filter>
+                <action android:name="com.kwai.chat.kwailink.service.KwaiLinkService"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.kwai.chat.kwailink.receiver.AlarmReceiver" android:process=":messagesdk">
+            <intent-filter>
+                <action android:name="com.kwai.chat.kwailink.heartbeat"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.kwai.chat.kwailink.heartbeat"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.MEDIA_MOUNTED"/>
+                <action android:name="android.intent.action.ACTION_PACKAGE_FULLY_REMOVED"/>
+                <action android:name="android.intent.action.ACTION_MY_PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.PACKAGE_DATA_CLEARED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.kwai.chat.kwailink.client.KwaiLinkNotifyClientBroadcastReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="com.kwai.chat.kwailink.ACTION_GET_SERVICE_TOKEN"/>
+                <action android:name="com.kwai.chat.kwailink.ACTION_INVALID_PACKET"/>
+                <action android:name="com.kwai.chat.kwailink.ACTION_INVALID_SERVICE_TOKEN"/>
+                <action android:name="com.kwai.chat.kwailink.ACTION_RELOGIN"/>
+                <action android:name="com.kwai.chat.kwailink.ACTION_DISPATCH_MSG"/>
+                <action android:name="com.kwai.chat.kwailink.ACTION_LOGIN_STATE_CHANGED"/>
+                <action android:name="com.kwai.chat.kwailink.ACTION_SESSION_MANAGER_STATE_CHANGED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.kwai.chat.kwailink.ACTION_LINK_SERVICE_CREATED"/>
+                <action android:name="com.kwai.chat.kwailink.ACTION_DISPATCH_MSG"/>
+                <action android:name="com.kwai.chat.kwailink.ACTION_PUSH_NOTIFIER"/>
+                <action android:name="com.kwai.chat.kwailink.ACTION_INVALID_SERVICE_TOKEN"/>
+                <action android:name="com.kwai.chat.kwailink.ACTION_RELOGIN"/>
+                <action android:name="com.kwai.chat.kwailink.ACTION_SESSION_MANAGER_STATE_CHANGED"/>
+                <action android:name="com.kwai.chat.kwailink.ACTION_INVALID_PACKET"/>
+                <action android:name="com.kwai.chat.kwailink.ACTION_GET_SERVICE_TOKEN"/>
+                <action android:name="com.kwai.chat.kwailink.ACTION_IGNORE_ACTION_DUE_TO_LOGOFF"/>
+                <action android:name="com.kwai.chat.kwailink.ACTION_APPID_UPDATE"/>
+                <action android:name="com.kwai.chat.kwailink.ACTION_UPDATE_TIME_OFFSET"/>
+                <action android:name="com.kwai.chat.kwailink.ACTION_PROBE_REQUEST"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.kwai.m2u.update.DownloadNotificationManager.DownloadNotificationEventReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="download.intent.action.DOWNLOAD_RESUME"/>
+                <action android:name="download.intent.action.DOWNLOAD_PAUSE"/>
+                <action android:name="download.intent.action.DOWNLOAD_CANCEL"/>
+                <action android:name="download.intent.action.DOWNLOAD_INSTALL"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.yunche.im.message.chat.InstantMessageActivity" android:screenOrientation="portrait" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="stateHidden"/>
+        <activity android:name="com.kwai.m2u.video.VideoExportActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:name="com.kwai.m2u.kuaishan.home.activity.KuaiShanHomeActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:name="com.kwai.m2u.kuaishan.edit.PicturePreviewActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:theme="@style/AppTheme_NoActionBar_noAnimation" android:name="com.kwai.m2u.kuaishan.edit.KuaiShanEditActivity" android:launchMode="singleTop" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:theme="@style/myTransparent" android:name="com.kwai.m2u.kuaishan.edit.VideoEditActivity" android:launchMode="singleTop" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.changeface.ChangeFaceActivity"/>
+        <activity android:name="com.kwai.m2u.capture.camera.InternalCaptureActivity"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.capture.PhotoCropActivity"/>
+        <activity android:name="com.kwai.m2u.home.album.preview.MediaPreviewActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.kwai.m2u.home.album.crop.ImageCropActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.kwai.m2u.social.photo_adjust.template_get.TemplateGetPageActivity" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:name="com.kwai.m2u.social.photo_adjust.batchedit.BatchEditPicActivity" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:name="com.kwai.m2u.social.home.FeedThemesActivity" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.cosplay.CosplayActivity"/>
+        <activity android:name="com.kwai.m2u.setting.aboutUs.PermissionDetailActivity" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:name="com.kwai.m2u.account.activity.AccountSettingActivity" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.kwai.m2u.account.activity.LoginActivity" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:name="com.kwai.m2u.account.activity.LoginCaptchaActivity" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:name="com.kwai.m2u.account.activity.RebindPhoneActivity" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:name="com.kwai.m2u.qrcode.ScanQrCodeActivity" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:name="com.kwai.m2u.emoticonV2.more.EmoticonMoreActivity" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:name="com.kwai.m2u.setting.aboutUs.PrivacySettingActivity" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:name="com.kwai.m2u.setting.aboutUs.PersonalInfoCheckActivity" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:name="com.kwai.m2u.setting.aboutUs.PermissionSettingActivity" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:name="com.kwai.m2u.familyphoto.FamilyPhotoActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.bgVirtual.BgVirtualActivity" android:launchMode="singleTop"/>
+        <activity android:name="com.kwai.m2u.home.album.preview.video.VideoEditPreviewActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.kwai.m2u.picture.PictureEditActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.pretty.hd_beauty.BeautyHDActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.pretty.mv.PictureEditMVActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.pretty.beauty.PictureEditBeautyActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.tool.params.PictureEditParamsActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.tool.crop.PictureEditCropActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.tool.correct.PictureEditCorrectActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.tool.cutout.PictureEditCutoutActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.clipphoto.MagicCropBgActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.pretty.beauty.acne.PictureEditAcneActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.pretty.makeup.PictureEditMakeupActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.pretty.pushface.PictureEditPushFaceActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.decoration.sticker.PictureEditStickerActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.tool.texture.PictureEditTextureActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.decoration.magnifier.PictureEditMagnifierActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.tool.mosaic.PictureEditMosaicActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.decoration.graffitiPen.PictureEditGraffitiPenActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.decoration.border.PictureEditBorderActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.effect.virtual.PictureEditBgVirtualActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.pretty.slimming.PictureEditSlimmingActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.pretty.soften_hair.PictureEditSoftenHairActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.effect.face3d_light.PictureEditLightActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.decoration.emoticon.PictureEditEmoticonActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.decoration.word.PictureEditWordActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.tool.erasepen.PictureErasePenActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.pretty.wrinkle.PictureWrinkleActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.effect.linestroke.ArtLineActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.template.PictureEditTemplateActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.template.MoreTemplateActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.social.profile.AvatarPreviewActivity" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.changefemale.ChangeFemaleActivity" android:launchMode="singleTop" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:name="com.kwai.m2u.follow.more.MoreFollowRecordActivity" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:name="com.kwai.m2u.follow.preview.VideoPreviewActivity" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:name="com.kwai.m2u.follow.record.RecordVideoActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:name="com.kwai.m2u.materialcenter.MaterialCenterActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.main.controller.shoot.recommend.cos_play.CosPlayEntranceActivity" android:launchMode="singleTop" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.main.controller.shoot.recommend.change_female.ChangeFemaleEntranceActivity" android:launchMode="singleTop" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.yxcorp.gateway.pay.activity.WXPayEntryActivity" android:launchMode="singleTask" android:configChanges="screenSize|orientation|keyboardHidden|keyboard"/>
+        <activity-alias android:name="com.kwai.m2u.wxapi.WXPayEntryActivity" android:exported="true" android:targetActivity="com.yxcorp.gateway.pay.activity.WXPayEntryActivity"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.main.controller.shoot.recommend.change_face.ChangeFaceEntranceActivity" android:launchMode="singleTop" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.main.controller.shoot.recommend.familyphoto.FamilyPhotoEntranceActivity" android:launchMode="singleTop" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:name="com.kwai.m2u.setting.aboutUs.PersonalRecommendDescActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.main.controller.shoot.recommend.photomovie.PhotoMovieEntranceActivity" android:launchMode="singleTop" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.kEffect.KEffectEntranceActivity"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.kEffect.preview.KEffectPreviewActivity" android:launchMode="singleTop"/>
+        <activity android:name="com.kwai.m2u.puzzle.PuzzleActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.puzzle.album.PuzzleAlbumActivity" android:launchMode="singleTask"/>
+        <activity android:name="com.kwai.m2u.debug.TestActivity" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.puzzle.album.preview.PuzzleAlbumPreviewActivity" android:launchMode="singleTask"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.pretty.foundation.PictureEditFoundationActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.makeuppen.PictureEditMakeUpPenActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:name="com.kwai.m2u.picture.play.PictureEditPlayActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.debug.DebugTempPlatformActivity" android:launchMode="singleTop"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.utils.AuditResultActivity" android:launchMode="singleTop"/>
+        <activity android:name="com.kwai.m2u.social.search.SearchActivity" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:name="com.kwai.m2u.main.fragment.video.subtitles.edit_subtitles.EditSubtitlesActivity" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.vip.VipHomePageActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:name="com.kwai.m2u.vip.VipRightsInfoActivity" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:theme="@style/arg_res_0x7f120012" android:name="com.kwai.m2u.picture.pretty.light.PictureEditFillLightActivity" android:launchMode="singleTop" android:configChanges="screenSize|orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <receiver android:name="com.kwai.yoda.event.YodaPhoneCallReceiver" android:enabled="true" android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL"/>
+            </intent-filter>
+        </receiver>
+        <activity android:theme="@style/arg_res_0x7f120010" android:name="com.kwai.module.component.gallery.home.HomeImportAlbumActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120011" android:name="com.kwai.module.component.gallery.pick.AlbumPickActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120011" android:name="com.kwai.module.component.gallery.home.preview.HomeImportCustomMediaPreviewActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:theme="@style/arg_res_0x7f120011" android:name="com.kwai.module.component.gallery.pick.preview.PickCustomMediaPreviewActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:name="com.m2u.webview.activity.CommonWebviewActivity" android:exported="false" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" android:windowSoftInputMode="adjustResize|stateAlwaysHidden"/>
+        <activity android:name="com.m2u.webview.activity.OriginalWebviewActivity" android:exported="false" android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" android:windowSoftInputMode="adjustResize|stateAlwaysHidden"/>
+        <receiver android:name="com.kuaishou.weapon.WeaponRECE" android:exported="false">
+            <intent-filter>
+                <action android:name="com.kuaishou.action.WEAPON.VIEW"/>
+                <category android:name="com.kuaishou.category.WEAPON"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.kuaishou.weapon.WeaponJS" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="true" android:exported="false"/>
+        <meta-data android:name="PUSH_XIAOMI_APP_ID" android:value="L2882303761517844139"/>
+        <meta-data android:name="PUSH_XIAOMI_APP_KEY" android:value="L5261784433139"/>
+        <service android:name="com.xiaomi.push.service.XMPushService" android:enabled="true"/>
+        <service android:name="com.xiaomi.push.service.XMJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="true" android:exported="false"/>
+        <service android:name="com.xiaomi.mipush.sdk.PushMessageHandler" android:enabled="true" android:exported="true"/>
+        <service android:name="com.xiaomi.mipush.sdk.MessageHandleService" android:enabled="true"/>
+        <receiver android:name="com.xiaomi.push.service.receivers.NetworkStatusReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.xiaomi.push.service.receivers.PingReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="com.xiaomi.push.PING_TIMER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.yxcorp.gifshow.push.xiaomi.XiaomiPushReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.MESSAGE_ARRIVED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.ERROR"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.kwai.logger.internal.LogService" android:enabled="true" android:exported="false"/>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.yxcorp.gateway.pay.activity.GatewayH5PayActivity" android:screenOrientation="behind" android:configChanges="screenSize|orientation|keyboardHidden|keyboard"/>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.yxcorp.gateway.pay.activity.GatewayPayActivity" android:screenOrientation="behind" android:configChanges="screenSize|orientation|keyboardHidden|keyboard"/>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.yxcorp.gateway.pay.activity.UriRouterActivity" android:screenOrientation="behind" android:configChanges="screenSize|orientation|keyboardHidden|keyboard">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="m2u" android:host="kspay" android:path="/agreement/alipay"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.yxcorp.gateway.pay.activity.GatewayPayOrderActivity" android:screenOrientation="behind" android:configChanges="screenSize|orientation|keyboardHidden|keyboard"/>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.yxcorp.gateway.pay.activity.GatewayPayOrderV2Activity" android:screenOrientation="behind" android:configChanges="screenSize|orientation|keyboardHidden|keyboard"/>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.yxcorp.gateway.pay.activity.GatewayOrderPrepayActivity" android:screenOrientation="behind" android:configChanges="screenSize|orientation|keyboardHidden|keyboard"/>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.yxcorp.gateway.pay.activity.AuthThirdActivity" android:screenOrientation="behind" android:configChanges="screenSize|orientation|keyboardHidden|keyboard"/>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.yxcorp.gateway.pay.activity.WithDrawBindActivity" android:screenOrientation="behind" android:configChanges="screenSize|orientation|keyboardHidden|keyboard"/>
+        <activity android:theme="@style/arg_res_0x7f12015a" android:name="com.yxcorp.gateway.pay.activity.PayWebViewActivity" android:screenOrientation="behind" android:configChanges="screenSize|orientation|keyboardHidden|keyboard" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.yxcorp.gateway.pay.activity.WechatSSOActivity" android:screenOrientation="behind" android:configChanges="screenSize|orientation|keyboardHidden|keyboard"/>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.yxcorp.gateway.pay.activity.WechatAuthActivity" android:screenOrientation="behind" android:configChanges="screenSize|orientation|keyboardHidden|keyboard" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <service android:name="com.kwai.kanas.services.KanasService" android:enabled="true" android:exported="false"/>
+        <activity android:name="com.kwai.kanas.debug.DebugLoggerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="@string/scheme_debug_logger_activity" android:host="openloggerchannel"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/arg_res_0x7f12012a" android:name="com.kwai.ad.biz.feed.detail.FeedDetailActivity" android:screenOrientation="portrait" android:configChanges="screenSize|orientation|keyboardHidden|keyboard" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:theme="@style/arg_res_0x7f120124" android:label="@string/kwai_app_name" android:name="com.kwai.ad.biz.award.AwardVideoPlayActivity" android:screenOrientation="portrait" android:configChanges="screenSize|orientation|keyboardHidden|keyboard" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:theme="@style/arg_res_0x7f12012a" android:label="@string/kwai_app_name" android:name="com.kwai.ad.framework.webview.AdYodaActivity" android:screenOrientation="portrait" android:configChanges="screenSize|orientation|keyboardHidden|keyboard">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="kwai" android:host="missionwebview"/>
+                <data android:scheme="kwai" android:host="adwebview"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/arg_res_0x7f12012a" android:label="@string/kwai_app_name" android:name="com.kwai.ad.framework.webview.KwaiYodaWebViewActivity" android:screenOrientation="portrait" android:configChanges="screenSize|orientation|keyboardHidden|keyboard"/>
+        <activity android:theme="@style/arg_res_0x7f12012c" android:name="com.kwai.ad.biz.download.AdDownloadCenterV2Activity" android:excludeFromRecents="true" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="screenSize|orientation|navigation|keyboardHidden" android:windowSoftInputMode="stateHidden"/>
+        <activity android:theme="@style/arg_res_0x7f12012a" android:label="@string/kwai_app_name" android:name="com.kwai.ad.framework.report.ReportYodaActivity" android:screenOrientation="portrait" android:configChanges="screenSize|orientation|keyboardHidden|keyboard" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <receiver android:name="com.kwai.ad.framework.download.nofication.NotifyClickReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="com.kwai.ad.framework.download.NOTIFICATION_CLICK"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.kwai.ad.biz.vpn.AdDownloadService" android:permission="android.permission.BIND_VPN_SERVICE">
+            <intent-filter>
+                <action android:name="android.net.VpnService"/>
+            </intent-filter>
+        </service>
+        <activity android:theme="@style/arg_res_0x7f120394" android:name="com.kwai.yoda.v2.YodaWebViewActivity" android:configChanges="screenSize|orientation|keyboardHidden|keyboard" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <meta-data android:name="com.huawei.hms.client.appid" android:value="100376419"/>
+        <service android:name="com.yxcorp.gifshow.push.huawei.HuaweiPushMessageService" android:exported="false">
+            <intent-filter>
+                <action android:name="com.huawei.push.action.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.yxcorp.gifshow.push.huawei.HuaweiPushActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.HUAWEI_PUSH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="push_kit_auto_init_enabled" android:value="false"/>
+        <meta-data android:name="PUSH_OPPO_APP_KEY" android:value="9aa06872c5174ff4aba0894371230f20"/>
+        <meta-data android:name="PUSH_OPPO_APP_SECRET" android:value="a5479427871543e58e67b8e61055434c"/>
+        <service android:name="com.heytap.mcssdk.PushService" android:permission="com.coloros.mcs.permission.SEND_MCS_MESSAGE" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="com.coloros.mcs.action.RECEIVE_MCS_MESSAGE"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.heytap.mcssdk.AppPushService" android:permission="com.heytap.mcs.permission.SEND_PUSH_MESSAGE" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="com.heytap.mcs.action.RECEIVE_MCS_MESSAGE"/>
+            </intent-filter>
+        </service>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.yxcorp.gifshow.push.oppo.OppoRouterActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_ROUTER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.kwai.android.register.core.notification.fall_ground.PassThroughFallToGroundActivity" android:exported="false"/>
+        <activity android:name="com.kwai.m2u.login.activity.QQSSOActivity"/>
+        <activity android:name="com.kwai.m2u.login.activity.WeiboSSOActivity"/>
+        <activity android:name="com.kwai.m2u.login.activity.WeChatSSOActivity"/>
+        <provider android:name="com.kwai.module.component.toast.kstoast.KSInitializationProvider" android:exported="false" android:authorities="com.kwai.m2u.initialize.provider"/>
+        <provider android:name="com.kwai.common.util.UtilsFileProvider" android:exported="false" android:authorities="com.kwai.m2u.utilcode.provider" android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/arg_res_0x7f14000b"/>
+        </provider>
+        <receiver android:name="com.yxcorp.download.DownloadReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="download.intent.action.DOWNLOAD_PAUSE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="download.intent.action.DOWNLOAD_RESUME"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="download.intent.action.DOWNLOAD_CANCEL"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="KWAI_APP_ID" android:value="string/ks651051625375991924"/>
+        <meta-data android:name="KWAI_SCOPE" android:value="user_info"/>
+        <activity android:theme="@style/Kwai_Theme_CustomTranslucent" android:name="com.kwai.auth.login.kwailogin.h5login.KwaiH5LoginActivity" android:exported="false" android:launchMode="singleTop" android:screenOrientation="behind" android:configChanges="screenSize|orientation|keyboardHidden|keyboard"/>
+        <activity android:theme="@style/Kwai_Theme_CustomTranslucent" android:label="@string/title_activity_kwai_handler" android:name="com.kwai.auth.login.kwailogin.applogin.RouteHandlerActivity" android:exported="true" android:screenOrientation="behind" android:configChanges="screenSize|orientation|keyboardHidden|keyboard"/>
+        <activity-alias android:name="com.kwai.m2u.kwai.KwaiHandlerActivity" android:exported="true" android:screenOrientation="behind" android:configChanges="screenSize|orientation|keyboardHidden|keyboard" android:targetActivity="com.kwai.auth.login.kwailogin.applogin.RouteHandlerActivity"/>
+        <activity android:name="com.kuaishou.tachikoma.api.container.debug.consolelog.ui.TKConsoleLogActivity"/>
+        <activity android:theme="@style/arg_res_0x7f120241" android:name="com.kwai.settings.SettingsActivity" android:screenOrientation="portrait"/>
+        <service android:name="com.kwai.performance.stability.oom.monitor.analysis.HeapAnalysisService" android:process=":heap_analysis"/>
+        <provider android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer" android:exported="false" android:multiprocess="true" android:authorities="com.kwai.m2u.lifecycle-process"/>
+        <meta-data android:name="APP_ID" android:value="ks651051625375991924"/>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.kwai.opensdk.sdk.openapi.KwaiHandlerActivity" android:exported="true" android:taskAffinity="net.sourceforge.simcpux" android:launchMode="singleTask" android:screenOrientation="behind" android:configChanges="screenSize|orientation|keyboardHidden|keyboard"/>
+        <activity-alias android:name="com.kwai.m2u.KwaiHandlerActivity" android:exported="true" android:screenOrientation="behind" android:configChanges="screenSize|orientation|keyboardHidden|keyboard" android:targetActivity="com.kwai.opensdk.sdk.openapi.KwaiHandlerActivity"/>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.kwai.opensdk.sdk.openapi.KwaiRouterActivity" android:exported="true" android:screenOrientation="behind" android:configChanges="screenSize|orientation|keyboardHidden|keyboard"/>
+        <activity-alias android:name="com.kwai.m2u.KwaiRouterActivity" android:exported="true" android:screenOrientation="behind" android:configChanges="screenSize|orientation|keyboardHidden|keyboard" android:targetActivity="com.kwai.opensdk.sdk.openapi.KwaiRouterActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="kwaisdk" android:host="router"/>
+            </intent-filter>
+        </activity-alias>
+        <activity android:theme="@style/arg_res_0x7f12039f" android:label="@string/loading_activity_handler" android:name="com.kwai.opensdk.sdk.LoadingActivity" android:screenOrientation="behind" android:configChanges="screenSize|orientation|keyboardHidden|keyboard"/>
+        <service android:name="com.kuaishou.dfp.DfpAssistService" android:exported="false" android:process=":DfpAssist" android:isolatedProcess="true"/>
+        <provider android:name="com.kuaishou.dfp.cloudid.bridge.DfpBridgeContentProvider" android:protectionLevel="signature" android:exported="false" android:authorities="com.kwai.m2u.DfpBridgeContentProvider"/>
+        <provider android:name="com.kuaishou.android.vader.VaderContextProvider" android:exported="false" android:authorities="com.kwai.m2u.applicationprovider" android:initOrder="100"/>
+        <service android:name="androidx.room.MultiInstanceInvalidationService" android:exported="false" android:directBootAware="true"/>
+        <service android:name="com.liulishuo.filedownloader.services.FileDownloadService.SharedMainProcessService"/>
+        <service android:name="com.liulishuo.filedownloader.services.FileDownloadService.SeparateProcessService" android:process=":filedownloader"/>
+        <service android:name="com.kwai.plugin.dva.install.remote.PluginInstallService" android:exported="false"/>
+        <provider android:name="com.kwai.plugin.dva.repository.store.PluginContentProvider" android:enabled="false" android:exported="false" android:authorities="com.kwai.m2u.data.provider"/>
+        <provider android:name="com.kwai.plugin.dva.hook.component.contentprovider.ProxyContentProvider" android:authorities="com.kwai.m2u.proxy.provider" android:grantUriPermissions="true"/>
+        <service android:name="com.kwai.plugin.dva.hook.component.service.container.DvaContainerServiceMainProcess" android:exported="false"/>
+        <activity android:name="com.sina.weibo.sdk.web.WebActivity" android:exported="false" android:configChanges="screenSize|orientation" android:windowSoftInputMode="adjustResize"/>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.sina.weibo.sdk.share.ShareTransActivity" android:exported="true" android:launchMode="singleTask" android:configChanges="screenSize|orientation|keyboardHidden">
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <provider android:name="com.sina.weibo.sdk.content.FileProvider" android:exported="false" android:authorities="com.kwai.m2u.fileprovider" android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/filepaths"/>
+        </provider>
+        <service android:name="com.kwai.video.kscamerakit.hardware.HardwareEncodeTestService" android:exported="false" android:process=":cameracompatibility"/>
+        <provider android:name="com.kwai.video.kscamerakit.sharedpreferences.SPContentProvider" android:exported="false" android:authorities="CAMERKIT_PROVIDER_AUTHORITY.com.kwai.m2u"/>
+        <service android:name="com.kwai.video.devicepersona.benchmark.DPBenchmarkTestService" android:exported="false" android:process=":dpbenchmark"/>
+        <activity android:label="clip_filter" android:name="com.kwai.video.devicepersona.baseinfo.GpuInfoToolActivity" android:screenOrientation="portrait"/>
+        <receiver android:name="com.huawei.hms.support.api.push.PushMsgReceiver" android:permission="com.kwai.m2u.permission.PROCESS_PUSH_MSG" android:directBootAware="true">
+            <intent-filter>
+                <action android:name="com.huawei.intent.action.PUSH_DELAY_NOTIFY"/>
+                <action android:name="com.huawei.intent.action.PUSH"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.huawei.hms.support.api.push.PushReceiver" android:permission="com.kwai.m2u.permission.PROCESS_PUSH_MSG" android:directBootAware="true">
+            <intent-filter>
+                <action android:name="com.huawei.android.push.intent.REGISTRATION"/>
+                <action android:name="com.huawei.android.push.intent.RECEIVE"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.huawei.hms.support.api.push.service.HmsMsgService" android:enabled="true" android:exported="true" android:process=":pushservice" android:directBootAware="true">
+            <intent-filter>
+                <action android:name="com.huawei.push.msg.NOTIFY_MSG"/>
+                <action android:name="com.huawei.push.msg.PASSBY_MSG"/>
+            </intent-filter>
+        </service>
+        <provider android:name="com.huawei.hms.support.api.push.PushProvider" android:permission="com.kwai.m2u.permission.PUSH_PROVIDER" android:readPermission="com.kwai.m2u.permission.PUSH_PROVIDER" android:writePermission="com.kwai.m2u.permission.PUSH_WRITE_PROVIDER" android:exported="true" android:authorities="com.kwai.m2u.huawei.push.provider"/>
+        <meta-data android:name="com.huawei.hms.client.service.name:push" android:value="push:5.3.0.300"/>
+        <meta-data android:name="com.huawei.hms.min_api_level:push:push" android:value="1"/>
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <activity android:theme="@android:style/Theme.NoTitleBar" android:name="com.alipay.sdk.app.H5PayActivity" android:exported="false" android:configChanges="fontScale|layoutDirection|density|smallestScreenSize|screenSize|screenLayout|orientation|navigation|keyboardHidden|keyboard|locale"/>
+        <activity android:theme="@android:style/Theme.NoTitleBar" android:name="com.alipay.sdk.app.H5AuthActivity" android:exported="false" android:configChanges="fontScale|layoutDirection|density|smallestScreenSize|screenSize|screenLayout|orientation|navigation|keyboardHidden|keyboard|locale"/>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.alipay.sdk.app.PayResultActivity" android:exported="true" android:launchMode="singleInstance" android:configChanges="fontScale|layoutDirection|density|smallestScreenSize|screenSize|screenLayout|orientation|navigation|keyboardHidden|keyboard|locale"/>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.alipay.sdk.app.AlipayResultActivity" android:exported="true" android:launchMode="singleTask" android:configChanges="fontScale|layoutDirection|density|smallestScreenSize|screenSize|screenLayout|orientation|navigation|keyboardHidden|keyboard|locale"/>
+        <activity android:name="com.alipay.sdk.app.H5OpenAuthActivity" android:exported="false" android:screenOrientation="behind" android:configChanges="fontScale|layoutDirection|density|smallestScreenSize|screenSize|screenLayout|orientation|navigation|keyboardHidden|keyboard|locale" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.alipay.sdk.app.APayEntranceActivity" android:exported="false" android:configChanges="fontScale|layoutDirection|density|smallestScreenSize|screenSize|screenLayout|orientation|navigation|keyboardHidden|keyboard|locale"/>
+        <provider android:name="com.huawei.hms.aaid.InitProvider" android:exported="false" android:authorities="com.kwai.m2u.aaidinitprovider" android:initOrder="500"/>
+        <meta-data android:name="com.huawei.hms.client.service.name:opendevice" android:value="opendevice:5.1.1.303"/>
+        <meta-data android:name="com.huawei.hms.min_api_level:opendevice:push" android:value="1"/>
+        <meta-data android:name="com.huawei.hms.client.service.name:base" android:value="base:5.3.0.301"/>
+        <meta-data android:name="com.huawei.hms.min_api_level:base:hmscore" android:value="1"/>
+        <meta-data android:name="availableLoaded" android:value="yes"/>
+        <provider android:name="com.huawei.hms.update.provider.UpdateProvider" android:exported="false" android:authorities="com.kwai.m2u.hms.update.provider" android:grantUriPermissions="true"/>
+        <provider android:name="com.huawei.hms.device.provider.CheckHmsProvider" android:exported="false" android:authorities="com.kwai.m2u.hms.device.validate.spoofprovider" android:grantUriPermissions="false"/>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.huawei.updatesdk.service.otaupdate.AppUpdateActivity" android:exported="false" android:configChanges="screenSize|orientation">
+            <meta-data android:name="hwc-theme" android:value="androidhwext:style/Theme.Emui.Translucent.NoTitleBar"/>
+        </activity>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.huawei.updatesdk.support.pm.PackageInstallerActivity" android:exported="false" android:configChanges="screenSize|orientation|keyboardHidden">
+            <meta-data android:name="hwc-theme" android:value="androidhwext:style/Theme.Emui.Translucent"/>
+        </activity>
+        <provider android:name="com.huawei.updatesdk.fileprovider.UpdateSdkFileProvider" android:exported="false" android:authorities="com.kwai.m2u.updateSdk.fileProvider" android:grantUriPermissions="true"/>
+        <activity android:theme="@style/arg_res_0x7f1200f0" android:name="com.huawei.hms.activity.BridgeActivity" android:exported="false" android:excludeFromRecents="true" android:screenOrientation="behind" android:configChanges="fontScale|layoutDirection|smallestScreenSize|screenSize|uiMode|screenLayout|orientation|locale" android:hardwareAccelerated="true">
+            <meta-data android:name="hwc-theme" android:value="androidhwext:style/Theme.Emui.Translucent"/>
+        </activity>
+        <activity android:name="com.huawei.hms.activity.EnableServiceActivity" android:exported="false" android:configChanges="smallestScreenSize|screenSize|screenLayout|orientation|keyboardHidden"/>
+        <provider android:name="com.huawei.agconnect.core.provider.AGConnectInitializeProvider" android:exported="false" android:authorities="com.kwai.m2u.AGCInitializeProvider"/>
+        <service android:name="com.huawei.agconnect.core.ServiceDiscovery" android:exported="false"/>
+    </application>
+</manifest>

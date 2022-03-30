@@ -75,3 +75,8 @@ gradle --warning-mode all
 Issue with Whitelist class
 cordova-plugin-file-transfer for Cordova Android 10
 https://github.com/apache/cordova-plugin-file-transfer/issues/316
+
+
+文件下载后无法正常打开预览  大小异常
+https://www.npmjs.com/package/cordova-plugin-android-permissions
+cordova plugin add cordova-plugin-android-permissions

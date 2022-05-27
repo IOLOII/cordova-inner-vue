@@ -1,3 +1,5 @@
+使用方法：打开bin/jadx-gui.bat
+
 <img src="https://raw.githubusercontent.com/skylot/jadx/master/jadx-gui/src/main/resources/logos/jadx-logo.png" width="64" align="left" />
 
 ## JADX
